@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,6 +26,8 @@ public class GameManager : Singleton<GameManager>
                 break;
             case GamePhase.SelectMapPhase:
                 break;
+            case GamePhase.PrepareBattleStart:
+                break;
             case GamePhase.UsecardPhase:
                 break;
             case GamePhase.BattlePhase:
@@ -39,6 +42,8 @@ public class GameManager : Singleton<GameManager>
             case GamePhase.MainMenuPhase:
                 break;
             case GamePhase.SelectMapPhase:
+                break;
+            case GamePhase.PrepareBattleStart:
                 break;
             case GamePhase.UsecardPhase:
                 break;
@@ -70,5 +75,22 @@ public enum PositionType
 
 public enum GamePhase
 {
-    MainMenuPhase, SelectMapPhase, UsecardPhase, BattlePhase
+    MainMenuPhase, SelectMapPhase, PrepareBattleStart, UsecardPhase, BattlePhase
+}
+
+
+[Serializable]
+public class Node
+{
+    int x;
+    int y;
+    GameObject nodeObj;
+
+    public Node(int x, int y, GameObject go)
+    {
+        this.x = x;
+        this.y = y;
+        nodeObj = go;
+    }
+
 }
